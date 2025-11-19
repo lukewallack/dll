@@ -22,9 +22,6 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
 		modCount = 0;
 	}
 
-    /**
-     * 
-     */
     @Override
     public void addToFront(T element) {
         Node<T> currentNode = head;
@@ -43,9 +40,6 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         modCount++;
     }
 
-    /**
-     * 
-     */
     @Override
     public void addToRear(T element) {
         Node<T> currentNode = tail;
@@ -64,17 +58,11 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         modCount++;
     }
 
-    /**
-     * 
-     */
     @Override
     public void add(T element) {
         addToRear(element);
     }
 
-    /**
-     * 
-     */
     @Override
     public void addAfter(T element, T target) {
         Node<T> currentNode = head;
@@ -106,9 +94,6 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         modCount++;
     }
 
-    /**
-     * 
-     */
     @Override
     public void add(int index, T element) {
         // Check if index is valid
@@ -148,9 +133,6 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         modCount++;
     }
 
-    /**
-     * 
-     */
     @Override
     public T removeFirst() {
         if (isEmpty()) {
@@ -161,9 +143,6 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         return retVal;
     }
 
-    /**
-     * 
-     */
     @Override
     public T removeLast() {
         if (isEmpty()) {
@@ -174,9 +153,6 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         return retVal;
     }
 
-    /**
-     * 
-     */
     @Override
     public T remove(T element) {
         if (isEmpty()) {
@@ -217,9 +193,6 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         return currentNode.getElement();
     }
 
-    /**
-     * 
-     */
     @Override
     public T remove(int index) {
         if (index < 0 || index >= size()) {
@@ -258,9 +231,6 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         return retVal;
     }
 
-    /**
-     * 
-     */
     @Override
     public void set(int index, T element) {
         if (index < 0 || index >= size()) {
@@ -283,9 +253,6 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         modCount++;
     }
 
-    /**
-     * 
-     */
     @Override
     public T get(int index) {
 		if (index >= size() || index < 0) {
@@ -310,9 +277,6 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         return retVal;
     }
 
-    /**
-     * 
-     */
     @Override
     public int indexOf(T element) {
         int index = -1;
@@ -330,9 +294,6 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         return index;
     }
 
-    /**
-     * 
-     */
     @Override
     public T first() {
         if (isEmpty()) {
@@ -342,9 +303,6 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         return head.getElement();
     }
 
-    /**
-     * 
-     */
     @Override
     public T last() {
         if (isEmpty()) {
@@ -354,33 +312,21 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         return tail.getElement();
     }
 
-    /**
-     * 
-     */
     @Override
     public boolean contains(T target) {
         return (indexOf(target) != -1);
     }
 
-    /**
-     * 
-     */
     @Override
     public boolean isEmpty() {
         return (size() == 0);
     }
 
-    /**
-     * 
-     */
     @Override
     public int size() {
         return size;
     }
 
-    /**
-     * 
-     */
     @Override
     public String toString() {
         Iterator<T> it = this.iterator();
@@ -400,25 +346,16 @@ public class IUDoubleLinkedList<T> implements IndexedUnsortedList<T> {
         return returnStringBuilder.toString();
     }
 
-    /**
-     * 
-     */
     @Override
     public Iterator<T> iterator() {
         return new DLLIterator();
     }
 
-    /**
-     * 
-     */
     @Override
     public ListIterator<T> listIterator() {
         return new DLLIterator();
     }
 
-    /**
-     * 
-     */
     @Override
     public ListIterator<T> listIterator(int startingIndex) {
         return new DLLIterator(startingIndex);
